@@ -1,0 +1,37 @@
+# Git
+.git
+.gitignore
+
+# IDE / 에디터
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS 파일
+.DS_Store
+Thumbs.db
+
+# Docker 관련 (재귀 방지)
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# 빌드 산출물
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+*.prof
+
+# 바이너리
+/bin/
+/build/
+
+# 임시 파일
+*.tmp
+*.log

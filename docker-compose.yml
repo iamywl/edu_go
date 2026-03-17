@@ -1,0 +1,24 @@
+# =============================================================================
+# Go 언어 학습 환경 Docker Compose 설정
+# =============================================================================
+# 이 파일은 Go 학습용 컨테이너를 정의한다.
+# 로컬 디렉토리를 컨테이너에 마운트하여 실시간 코드 편집이 가능하다.
+# =============================================================================
+
+services:
+  go-edu:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: go-edu-container
+    volumes:
+      - .:/workspace
+    ports:
+      - "8080:8080"    # HTTP 서버 (ch28_project_http_server)
+      - "8443:8443"    # HTTPS 서버
+      - "50051:50051"  # gRPC 서버 (ch30_project_grpc_chat)
+    environment:
+      - CGO_ENABLED=1
+      - GOPATH=/go
+    stdin_open: true
+    tty: true
